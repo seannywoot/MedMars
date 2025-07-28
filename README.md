@@ -49,6 +49,14 @@ GC-MedMaRS/
 │   ├── main.css           # Dashboard styles
 │   ├── home.css           # Home page styles
 │   └── department.css     # Department pages styles
+├── Database/              # Database schema and setup files
+│   ├── appointment_list.sql # Appointment database schema
+│   ├── appointments.sql   # Appointments table structure
+│   ├── list_am_db.sql    # Morning appointment list database
+│   ├── patient_list.sql  # Patient records database schema
+│   ├── test_db.sql       # User authentication database
+│   ├── user_list.sql     # User list table structure
+│   └── users.sql         # Users table structure
 ├── departments/           # Department-specific modules
 │   ├── cahs.php          # Allied Health Sciences
 │   ├── cba.php           # Business and Accountancy
@@ -79,7 +87,17 @@ GC-MedMaRS/
 
 ### Database Setup
 
-1. Create the required databases:
+The `Database/` folder contains all necessary SQL schema files for easy setup:
+
+1. **Import the database schemas** using the provided SQL files:
+
+   - `Database/test_db.sql` - User authentication database
+   - `Database/patient_list.sql` - Patient records database
+   - `Database/appointment_list.sql` - Appointment management database
+
+2. **Alternative manual setup** (if needed):
+
+   Create the required databases:
 
    ```sql
    CREATE DATABASE test_db;           -- For user authentication
@@ -87,48 +105,7 @@ GC-MedMaRS/
    CREATE DATABASE appointment_list;  -- For appointments
    ```
 
-2. Create the users table in `test_db`:
-
-   ```sql
-   USE test_db;
-   CREATE TABLE users (
-       ID int AUTO_INCREMENT PRIMARY KEY,
-       user_name varchar(50) NOT NULL,
-       password varchar(255) NOT NULL,
-       name varchar(100) NOT NULL
-   );
-   ```
-
-3. Create department tables in `patient_list`:
-
-   ```sql
-   USE patient_list;
-   CREATE TABLE cahs_list (
-       patient_number varchar(20) PRIMARY KEY,
-       last_name varchar(50) NOT NULL,
-       first_name varchar(50) NOT NULL,
-       hospital varchar(100),
-       gender varchar(10),
-       age int,
-       department varchar(50)
-   );
-   -- Repeat for cba_list, ccs_list, ceas_list, chtm_list
-   ```
-
-4. Create appointments table in `appointment_list`:
-   ```sql
-   USE appointment_list;
-   CREATE TABLE appointments (
-       id int AUTO_INCREMENT PRIMARY KEY,
-       patient_number varchar(20) NOT NULL,
-       last_name varchar(50) NOT NULL,
-       date date NOT NULL,
-       time time NOT NULL,
-       doctor_id varchar(20),
-       doc_name varchar(100),
-       status enum('Pending', 'Complete', 'Canceled') DEFAULT 'Pending'
-   );
-   ```
+   Import the corresponding SQL files or create tables manually using the provided schema files.
 
 ### Application Setup
 

@@ -20,6 +20,15 @@ GC-MedMaRS/
 │   ├── home.css               # Home page and general styles
 │   └── department.css         # Department-specific page styles
 │
+├── Database/                  # Database schema and setup files
+│   ├── appointment_list.sql   # Appointment database schema
+│   ├── appointments.sql       # Appointments table structure
+│   ├── list_am_db.sql        # Morning appointment list database
+│   ├── patient_list.sql      # Patient records database schema
+│   ├── test_db.sql           # User authentication database
+│   ├── user_list.sql         # User list table structure
+│   └── users.sql             # Users table structure
+│
 ├── departments/               # Department-specific modules
 │   ├── cahs.php              # College of Allied Health Sciences
 │   ├── cba.php               # College of Business and Accountancy
@@ -87,11 +96,20 @@ All department files (`cahs.php`, `cba.php`, `ccs.php`, `ceas.php`, `chtm.php`) 
 
 ## Database Structure
 
-The system uses three main databases:
+The system uses three main databases with SQL schema files provided in the `Database/` folder:
 
 1. **test_db**: User authentication
+   - `test_db.sql`: Main database schema
+   - `users.sql`: Users table structure
+   - `user_list.sql`: User list table structure
+
 2. **patient_list**: Student medical records (separate tables for each department)
+   - `patient_list.sql`: Patient records database schema
+
 3. **appointment_list**: Appointment scheduling and management
+   - `appointment_list.sql`: Appointment database schema
+   - `appointments.sql`: Appointments table structure
+   - `list_am_db.sql`: Morning appointment list database
 
 ## Next Steps for Development
 
