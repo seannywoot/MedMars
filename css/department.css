@@ -1,0 +1,426 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background: #dfe9f5;
+}
+.container{
+    display: flex;
+}
+nav {
+    position: sticky;
+    top: 0;    
+    background: #fff;
+    width: 280px;
+    height: 100vh;  
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1000;   
+}
+.logo{
+    text-align: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.logo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+a{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display: table;
+    width: 280px;
+    padding: 10px;
+}
+nav .fa-solid{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+a:hover{
+    background: #eee;
+}
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+.main {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+.main-top {
+    display: flex;
+    width: 100%;
+}
+.top {
+    background-color: #007BFF; 
+    color: white; 
+    padding: 20px;
+    border-radius: 10px;
+}
+.top h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+.date-time {
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+.date-time i {
+    margin-right: 5px;
+    font-size: 18px;
+}
+/* Patient Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+table th {
+    background-color: #f4f6f9;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #555;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fbfc;
+}
+
+table tr:hover {
+    background-color: #f1f5f9;
+}
+
+table tr td {
+    border-bottom: 1px solid #e9ecef;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table td {
+    color: #666;
+}
+.search {
+    padding-left: 20vh;
+}
+.searchBar {
+    width: 30%;
+    padding: 12px 10px;
+    margin: 10px -150px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    background-color: #f4f6f9;
+    transition: all 0.3s ease;
+}
+
+.searchBar:focus {
+    border-color: #666;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* Style for Add Patient Button */
+.add-form {
+    margin: 20px 0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.add-form h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.add-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    color: #333;
+    background-color: #f4f6f9;
+    transition: all 0.3s ease;
+}
+
+.add-form input:focus {
+    border-color: #666;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.add-form button {
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-form button:hover {
+    background-color: #0056b3;
+}
+/* Toggle Button for Add Patient */
+.add-patient-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+}
+
+.add-patient-btn:hover {
+    background-color: #0056b3;
+}
+
+.edit-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; /* Red color for delete */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3; /* Darker red on hover */
+}
+
+.delete-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #dc3545; /* Red color for delete */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+.popup-dep{
+    background: rgb(0, 0, 0, 0.6);
+    margin: -20px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.popup-dep.active {
+    display: flex; /* Show popup when active */
+}
+.closebtn-dep{
+    position: relative;
+    top: -225px;
+    right: -250px;
+    background: #fff;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.edit-form {
+    margin: 5px 0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.edit-form h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.edit-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    color: #333;
+    background-color: #f4f6f9;
+    transition: all 0.3s ease;
+}
+
+.edit-form input:focus {
+    border-color: #666;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    outline: none;
+}
+
+.edit-form button {
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edt-form button:hover {
+    background-color: #0056b3;
+}
+
+.popup-edit{
+    background: rgb(0, 0, 0, 0.6);
+    margin: -20px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.popup-edit.active {
+    display: flex; /* Show popup when active */
+}
+.closebtn-edit{
+    position: relative;
+    top: -225px;
+    right: -250px;
+    background: #fff;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.popup{
+    background: rgb(0, 0, 0, 0.6);
+    margin: -20px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.popup.active {
+    display: flex; /* Show popup when active */
+}
+.closebtn{
+    position: relative;
+    top: -205px;
+    right: -250px;
+    background: #fff;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Style for status dropdown */
+.status-select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f4f6f9;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.status-select:focus {
+    border-color: #666;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.status-select:hover {
+    background-color: #e9ecef;
+}
+
+.status-select option {
+    padding: 5px;
+    font-size: 14px;
+}
+
